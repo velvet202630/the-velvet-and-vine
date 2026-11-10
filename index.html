@@ -213,7 +213,48 @@
             </div>
         </section>
 
-        <!-- ABOUT & SERVICE AREA SECTION -->
+        <!-- GALLERY — The Velvet & Vine website
+     Insert this section into index.html in the repo velvet202630/the-velvet-and-vine,
+     immediately AFTER the closing </section> of the Artisan Menu section
+     (id="menu") and BEFORE <!-- ABOUT & SERVICE AREA SECTION -->.
+     Upload the 5 files in images/ to a new images/ folder in the same repo first,
+     keeping these exact filenames. The site currently has no <img> tags at all
+     (checked 2026-11-10, index.html is 520 lines, single file in the repo),
+     so this is the site's first photo gallery. Uses the site's existing
+     Tailwind + gold/velvet classes, so no new CSS is needed.
+-->
+        <!-- OUR WORK / GALLERY -->
+        <section id="gallery" class="w-full mb-12 scroll-mt-6">
+            <div class="text-center mb-6">
+                <span class="text-xs text-gold-400 uppercase tracking-widest font-semibold">Our Work</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-1">Made to Gather Around</h2>
+                <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-2"></div>
+                <p class="text-sm text-gray-300 mt-3">A few of our recent boards, grazing tables and gift boxes — styled fresh for every occasion.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                <figure class="rounded-2xl overflow-hidden gold-border">
+                    <img src="images/grazing-table.jpg" alt="Large grazing table with salami roses, grapes, cheeses, honey and fresh flowers" class="w-full h-56 md:h-72 object-cover" loading="lazy">
+                    <figcaption class="text-xs text-gray-300 text-center py-2 bg-velvet-900/60">Grazing Table</figcaption>
+                </figure>
+                <figure class="rounded-2xl overflow-hidden gold-border">
+                    <img src="images/signature-box.jpg" alt="Signature charcuterie box with salami roses, strawberries, grapes and crackers" class="w-full h-56 md:h-72 object-cover" loading="lazy">
+                    <figcaption class="text-xs text-gray-300 text-center py-2 bg-velvet-900/60">Signature Board</figcaption>
+                </figure>
+                <figure class="rounded-2xl overflow-hidden gold-border">
+                    <img src="images/round-board.jpg" alt="Round charcuterie board with salami roses, edible flowers, brie and fresh fruit" class="w-full h-56 md:h-72 object-cover" loading="lazy">
+                    <figcaption class="text-xs text-gray-300 text-center py-2 bg-velvet-900/60">Round Board</figcaption>
+                </figure>
+                <figure class="rounded-2xl overflow-hidden gold-border">
+                    <img src="images/wooden-tray-board.jpg" alt="Wooden tray board with a brie centre, salami rose, fruit, cheeses and dips" class="w-full h-56 md:h-72 object-cover" loading="lazy">
+                    <figcaption class="text-xs text-gray-300 text-center py-2 bg-velvet-900/60">Wooden Tray Board</figcaption>
+                </figure>
+                <figure class="rounded-2xl overflow-hidden gold-border col-span-2 md:col-span-1">
+                    <img src="images/mini-boxes.jpg" alt="Individual charcuterie mini boxes with cheese, salami roses, berries and sweets" class="w-full h-56 md:h-72 object-cover" loading="lazy">
+                    <figcaption class="text-xs text-gray-300 text-center py-2 bg-velvet-900/60">Individual Mini Boxes</figcaption>
+                </figure>
+            </div>
+        </section>
+<!-- ABOUT & SERVICE AREA SECTION -->
         <section id="about" class="w-full mb-12 glass-card p-6 md:p-8 rounded-2xl gold-border scroll-mt-6">
             <div class="flex items-center gap-3 mb-4 text-gold-400">
                 <i class="fa-solid fa-crown text-xl"></i>
