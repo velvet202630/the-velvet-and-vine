@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Velvet & Vine | Luxury Charcuterie & Grazing Tables</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        velvet: {
+                            50: '#fdf4f5',
+                            100: '#fbe8eb',
+                            200: '#f7d5db',
+                            500: '#b8324f',
+                            700: '#7a192c',
+                            800: '#5c1322',
+                            900: '#3a0812',
+                            950: '#220308',
+                        },
+                        gold: {
+                            100: '#fdf8e6',
+                            300: '#f5e4ab',
+                            400: '#ebd174',
+                            500: '#d4af37',
+                            600: '#b89228',
+                        },
+                        charcoal: '#141213'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #141213;
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .bg-velvet-gradient {
+            background: linear-gradient(135deg, #3a0812 0%, #141213 60%, #220308 100%);
+        }
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+        .glass-card {
+            background: rgba(34, 3, 8, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+        }
+        .modal-blur {
+            background: rgba(10, 2, 4, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #141213;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7a192c;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-velvet-gradient text-gray-200 antialiased selection:bg-gold-500 selection:text-velvet-950">
+
+    <!-- Container Wrap (Optimized for Mobile Bio View with Desktop Centering) -->
+    <div class="max-w-md md:max-w-3xl mx-auto px-4 py-8 md:py-12 flex flex-col items-center">
+
+        <!-- HEADER / BRAND PROFILE HERO -->
+        <header class="text-center w-full mb-8 flex flex-col items-center">
+            <!-- Brand Badge / Logo Icon -->
+            <div class="relative mb-5 group cursor-pointer" onclick="scrollToSection('about')">
+                <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-tr from-velvet-900 via-velvet-700 to-gold-500 p-[2px] gold-glow transition-transform duration-500 group-hover:scale-105">
+                    <div class="w-full h-full rounded-full bg-velvet-950 flex flex-col items-center justify-center p-2 text-center border border-gold-500/40">
+                        <i class="fa-solid font-serif text-3xl md:text-4xl text-gold-400">V&V</i>
+                        <span class="text-[9px] tracking-widest text-gold-300 uppercase font-semibold mt-1">Walnut Creek</span>
+                    </div>
+                </div>
+                <div class="absolute -bottom-1 right-1 bg-gold-500 text-velvet-950 text-xs px-2.5 py-0.5 rounded-full font-bold shadow-md flex items-center gap-1">
+                    <i class="fa-solid fa-star text-[10px]"></i> 5.0
+                </div>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h1 class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-white mb-2">
+                The Velvet & Vine
+            </h1>
+            <p class="text-gold-400 font-serif italic text-lg md:text-xl mb-3">
+                Luxury Charcuterie & Artisan Grazing Tables
+            </p>
+            <p class="text-xs md:text-sm text-gray-300 max-w-xs md:max-w-md font-light leading-relaxed mb-6">
+                Elevating weddings, private events, and celebrations across Walnut Creek, Concord & the East Bay Area.
+            </p>
+
+            <!-- Social Links Quick Bar (Instagram Only) -->
+            <div class="flex items-center gap-4 text-gray-300 mb-6">
+                <a href="https://instagram.com/the_velvet_vin_walnut_creek" target="_blank" aria-label="Instagram" class="px-5 py-2.5 rounded-full glass-card flex items-center justify-center gap-2 text-gold-400 hover:text-white hover:border-gold-500 transition-all duration-300 hover:-translate-y-0.5 shadow-md">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                    <span class="text-xs font-semibold tracking-wider">@the_velvet_vin_walnut_creek</span>
+                </a>
+                <a href="tel:9257880651" aria-label="Call Us" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gold-400 hover:text-white hover:border-gold-500 transition-all duration-300 hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone text-base"></i>
+                </a>
+            </div>
+
+            <!-- Main Direct Call to Action Button -->
+            <button onclick="openBookingModal()" class="w-full max-w-md py-4 px-6 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 text-velvet-950 font-bold text-base md:text-lg tracking-wide uppercase shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Reserve Your Catering Spread</span>
+            </button>
+        </header>
+
+        <!-- QUICK ACTION LINKS / CARDS -->
+        <section class="w-full space-y-3.5 mb-10">
+            <!-- Link 1: View Menu -->
+            <button onclick="scrollToSection('menu')" class="w-full p-4 rounded-xl glass-card flex items-center justify-between group hover:border-gold-400 hover:bg-velvet-900/60 transition-all duration-300">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-velvet-800/80 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-semibold text-white group-hover:text-gold-300 transition-colors">Artisan Menu & Pricing</h3>
+                        <p class="text-xs text-gray-400">Signature boards, grazing tables & wine pairings</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all"></i>
+            </button>
+
+            <!-- Link 2: Call Direct / WhatsApp -->
+            <a href="tel:9257880651" class="w-full p-4 rounded-xl glass-card flex items-center justify-between group hover:border-gold-400 hover:bg-velvet-900/60 transition-all duration-300">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-velvet-800/80 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-semibold text-white group-hover:text-gold-300 transition-colors">Direct Consultation</h3>
+                        <p class="text-xs text-gray-400">Speak directly with our concierge: (925) 788-0651</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-gray-500 group-hover:text-gold-400 transition-all"></i>
+            </a>
+
+            <!-- Link 3: Service Area & Info -->
+            <button onclick="scrollToSection('about')" class="w-full p-4 rounded-xl glass-card flex items-center justify-between group hover:border-gold-400 hover:bg-velvet-900/60 transition-all duration-300">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-velvet-800/80 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-semibold text-white group-hover:text-gold-300 transition-colors">Delivery & Coverage Area</h3>
+                        <p class="text-xs text-gray-400">Walnut Creek, Brentwood, Concord & East Bay</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all"></i>
+            </button>
+        </section>
+
+        <!-- ARTISAN MENU SECTION -->
+        <section id="menu" class="w-full mb-12 scroll-mt-6">
+            <div class="text-center mb-6">
+                <span class="text-xs text-gold-400 uppercase tracking-widest font-semibold">Gourmet Offerings</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-1">Artisan Menu & Pricing</h2>
+                <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-2"></div>
+            </div>
+
+            <!-- Menu Navigation Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
+                <button id="btn-boards" onclick="switchCategory('boards')" class="menu-tab px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 bg-gold-500 text-velvet-950 shadow-md font-bold">
+                    Signature Boards
+                </button>
+                <button id="btn-grazing" onclick="switchCategory('grazing')" class="menu-tab px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 glass-card text-gray-300 hover:text-white">
+                    Grazing Tables
+                </button>
+                <button id="btn-cups" onclick="switchCategory('cups')" class="menu-tab px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 glass-card text-gray-300 hover:text-white">
+                    Individual Cups
+                </button>
+                <button id="btn-wine" onclick="switchCategory('wine')" class="menu-tab px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 glass-card text-gray-300 hover:text-white">
+                    Wine Pairings
+                </button>
+            </div>
+
+            <!-- Dynamic Menu Container -->
+            <div id="menu-content" class="space-y-4">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </section>
+
+        <!-- ABOUT & SERVICE AREA SECTION -->
+        <section id="about" class="w-full mb-12 glass-card p-6 md:p-8 rounded-2xl gold-border scroll-mt-6">
+            <div class="flex items-center gap-3 mb-4 text-gold-400">
+                <i class="fa-solid fa-crown text-xl"></i>
+                <h2 class="font-serif text-2xl md:text-3xl font-bold text-white">The Velvet Experience</h2>
+            </div>
+            <p class="text-sm md:text-base text-gray-300 leading-relaxed mb-4">
+                At <strong class="text-gold-300 font-normal">The Velvet & Vine</strong>, we turn gatherings into unforgettable culinary moments. Based in Walnut Creek, California, our team meticulously designs artisanal charcuterie boards and lavish grazing tables featuring premium cured meats, aged cheeses, organic fruits, rustic crackers, and house-made spreads.
+            </p>
+            
+            <div class="border-t border-gold-500/20 pt-4 mt-4">
+                <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-gold-400"></i> Primary Coverage Areas:
+                </h3>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="px-3 py-1 rounded-full bg-velvet-900/80 text-gold-300 border border-gold-500/20">Walnut Creek</span>
+                    <span class="px-3 py-1 rounded-full bg-velvet-900/80 text-gold-300 border border-gold-500/20">Concord</span>
+                    <span class="px-3 py-1 rounded-full bg-velvet-900/80 text-gold-300 border border-gold-500/20">Brentwood</span>
+                    <span class="px-3 py-1 rounded-full bg-velvet-900/80 text-gold-300 border border-gold-500/20">Danville</span>
+                    <span class="px-3 py-1 rounded-full bg-velvet-900/80 text-gold-300 border border-gold-500/20">San Ramon</span>
+                    <span class="px-3 py-1 rounded-full bg-velvet-900/80 text-gold-300 border border-gold-500/20">Lafayette</span>
+                    <span class="px-3 py-1 rounded-full bg-velvet-900/80 text-gold-300 border border-gold-500/20">Greater East Bay</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER & CONTACT INFO -->
+        <footer class="w-full text-center text-xs text-gray-400 border-t border-gold-500/20 pt-6">
+            <p class="font-serif text-lg text-white mb-1">The Velvet & Vine</p>
+            <p class="text-gold-400 font-semibold mb-2">
+                <a href="tel:9257880651" class="hover:underline">Direct Concierge: (925) 788-0651</a>
+            </p>
+            <div class="mb-4">
+                <a href="https://instagram.com/the_velvet_vin_walnut_creek" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-gray-300 hover:text-gold-400 transition-colors">
+                    <i class="fa-brands fa-instagram text-gold-400"></i>
+                    <span>Follow us on Instagram @the_velvet_vin_walnut_creek</span>
+                </a>
+            </div>
+            <p class="mb-4">Walnut Creek & East Bay, CA • Licensed & Insured</p>
+            <p class="text-[10px] text-gray-500">&copy; 2026 The Velvet & Vine. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- BOOKING / CATERING INQUIRY MODAL -->
+    <div id="bookingModal" class="fixed inset-0 z-50 modal-blur flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-velvet-950 border border-gold-500/40 w-full max-w-lg rounded-2xl p-6 md:p-8 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+            <!-- Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-velvet-900 flex items-center justify-center border border-gold-500/20">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center mb-6">
+                <span class="text-xs text-gold-400 uppercase tracking-widest font-semibold">Concierge Booking</span>
+                <h2 class="font-serif text-2xl md:text-3xl font-bold text-white mt-1">Request Catering Quote</h2>
+                <p class="text-xs text-gray-400 mt-1">Fill out the details below and we will contact you within 24 hours.</p>
+            </div>
+
+            <!-- Booking Form -->
+            <form id="cateringForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Your Full Name *</label>
+                    <input type="text" required placeholder="e.g. Sophia Montgomery" class="w-full px-4 py-2.5 rounded-lg bg-charcoal border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400 transition-colors">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1">Phone Number *</label>
+                        <input type="tel" required placeholder="(925) 000-0000" class="w-full px-4 py-2.5 rounded-lg bg-charcoal border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1">Email Address *</label>
+                        <input type="email" required placeholder="sophia@example.com" class="w-full px-4 py-2.5 rounded-lg bg-charcoal border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400 transition-colors">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1">Event Date *</label>
+                        <input type="date" required class="w-full px-4 py-2.5 rounded-lg bg-charcoal border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1">Estimated Guests *</label>
+                        <select id="guestCount" onchange="calculateEstimate()" required class="w-full px-4 py-2.5 rounded-lg bg-charcoal border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400 transition-colors">
+                            <option value="">Select guest count</option>
+                            <option value="10">2 - 10 Guests (Intimate Board)</option>
+                            <option value="25">11 - 25 Guests (Grand Board)</option>
+                            <option value="50">25 - 50 Guests (Grazing Table)</option>
+                            <option value="100">50 - 100+ Guests (Luxury Event)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Catering Style / Interest *</label>
+                    <select id="cateringStyle" onchange="calculateEstimate()" required class="w-full px-4 py-2.5 rounded-lg bg-charcoal border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400 transition-colors">
+                        <option value="">Select service style</option>
+                        <option value="board">Signature Wood Charcuterie Boards</option>
+                        <option value="table">Full-Scale Grazing Table Spread</option>
+                        <option value="cups">Individual Charcuterie Cups / Mini Boxes</option>
+                        <option value="custom">Custom Wine & Pairings Package</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Event Location / Special Requests</label>
+                    <textarea rows="3" placeholder="City (e.g. Walnut Creek), dietary preferences, or theme notes..." class="w-full px-4 py-2.5 rounded-lg bg-charcoal border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400 transition-colors"></textarea>
+                </div>
+
+                <!-- Live Estimated Pricing Display -->
+                <div class="p-3 rounded-lg bg-velvet-900/60 border border-gold-500/30 flex items-center justify-between text-xs">
+                    <span class="text-gray-300">Estimated Starting Investment:</span>
+                    <span id="estimatedPrice" class="text-gold-400 font-bold text-base">$0.00</span>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 text-velvet-950 font-bold uppercase tracking-wider text-sm shadow-md hover:brightness-110 transition-all">
+                    Send Inquiry Request
+                </button>
+            </form>
+
+            <!-- Success Confirmation State (Hidden initially) -->
+            <div id="successMessage" class="hidden text-center py-8 space-y-4">
+                <div class="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto text-gold-400 text-3xl border border-gold-500">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 class="font-serif text-2xl text-white font-bold">Inquiry Received!</h3>
+                <p class="text-sm text-gray-300">Thank you for reaching out to The Velvet & Vine. Our concierge team will review your event details and respond within 24 hours.</p>
+                <div class="pt-4">
+                    <button onclick="closeBookingModal()" class="px-6 py-2.5 rounded-lg bg-gold-500 text-velvet-950 font-bold text-xs uppercase tracking-wider">
+                        Return to Site
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // Menu Data Categories
+        const menuData = {
+            boards: [
+                {
+                    name: "The Velvet Petite Board",
+                    servings: "Serves 4 - 6 Guests",
+                    price: "$145",
+                    desc: "3 artisanal cheeses (Aged Gouda, Triple Cream Brie, Spanish Manchego), 2 premium cured meats, dried figs, honey comb, marcona almonds & rustic sourdough crackers.",
+                    tag: "Popular Choice"
+                },
+                {
+                    name: "The Vine Grand Board",
+                    servings: "Serves 12 - 16 Guests",
+                    price: "$295",
+                    desc: "5 handcrafted cheeses, Prosciutto di Parma, Truffle Salami, fresh berries, gourmet jams, olives, candied walnuts, and artisan bread selection.",
+                    tag: "Chef Favorite"
+                }
+            ],
+            grazing: [
+                {
+                    name: "Opulent Grazing Table",
+                    servings: "25+ Guests (Starting at $22 / person)",
+                    price: "From $550",
+                    desc: "A breathtaking flat or multi-tiered banquet centerpiece styled on-location. Premium charcuterie, gourmet antipasti, fresh seasonal fruits, floral accents, artisan breads & artisan spreads.",
+                    tag: "Weddings & Galas"
+                },
+                {
+                    name: "Brunch & Grazing Table",
+                    servings: "20+ Guests",
+                    price: "From $480",
+                    desc: "Combination of savory charcuterie, mini pastries, smoked salmon, fresh berries, whipped honey ricotta, and artisanal bagels.",
+                    tag: "Morning Events"
+                }
+            ],
+            cups: [
+                {
+                    name: "Individual Velvet Charcuterie Cups",
+                    servings: "Minimum order: 12 Cups",
+                    price: "$14 / cup",
+                    desc: "Single-serving luxury cups featuring skewers of aged cheddar, salami rosette, cornichon, fresh blackberry, and grissini breadstick.",
+                    tag: "Corporate & Cocktail"
+                },
+                {
+                    name: "Personal Artisan Mini Boxes",
+                    servings: "Minimum order: 8 Boxes",
+                    price: "$24 / box",
+                    desc: "Elegantly packaged individual boxes with 2 cheeses, cured meat, crackers, dried fruit, and a mini chocolate truffle.",
+                    tag: "Gifting & Meetings"
+                }
+            ],
+            wine: [
+                {
+                    name: "Napa Valley Cabernet & Board Pairings",
+                    servings: "Add-on package",
+                    price: "+$95",
+                    desc: "Curated bottle of premium Napa Valley Cabernet Sauvignon selected specifically to complement our sharp cheeses and cured meats.",
+                    tag: "Wine Sommelier Pick"
+                },
+                {
+                    name: "Sonoma Coast Sparkling & Brie Package",
+                    servings: "Add-on package",
+                    price: "+$85",
+                    desc: "Crisp sparkling wine paired with extra triple cream brie, organic honeycomb, and fresh strawberries.",
+                    tag: "Celebration"
+                }
+            ]
+        };
+
+        // Render Menu Category Items
+        function switchCategory(categoryKey) {
+            // Update Active Buttons styling
+            document.querySelectorAll('.menu-tab').forEach(btn => {
+                btn.className = 'menu-tab px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 glass-card text-gray-300 hover:text-white';
+            });
+            const activeBtn = document.getElementById(`btn-${categoryKey}`);
+            if (activeBtn) {
+                activeBtn.className = 'menu-tab px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 bg-gold-500 text-velvet-950 shadow-md font-bold';
+            }
+
+            // Render Content
+            const container = document.getElementById('menu-content');
+            const items = menuData[categoryKey] || [];
+            
+            container.innerHTML = items.map(item => `
+                <div class="glass-card p-5 rounded-xl border border-gold-500/20 hover:border-gold-500/50 transition-all duration-300 relative">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider bg-velvet-900/90 px-2 py-0.5 rounded-md border border-gold-500/20">${item.tag}</span>
+                            <h3 class="font-serif text-xl font-bold text-white mt-1.5">${item.name}</h3>
+                            <p class="text-xs text-gold-300 italic mb-2">${item.servings}</p>
+                        </div>
+                        <span class="font-serif text-xl font-bold text-gold-400 bg-velvet-950 px-3 py-1 rounded-lg border border-gold-500/30">${item.price}</span>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">${item.desc}</p>
+                    <button onclick="openBookingModal()" class="w-full py-2 rounded-lg bg-velvet-900/80 hover:bg-gold-500 hover:text-velvet-950 text-gold-300 text-xs font-semibold uppercase tracking-wider transition-all border border-gold-500/30">
+                        Inquire For This Item
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Modal Functions
+        function openBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                // Reset form state
+                document.getElementById('cateringForm').reset();
+                document.getElementById('cateringForm').classList.remove('hidden');
+                document.getElementById('successMessage').classList.add('hidden');
+                document.getElementById('estimatedPrice').innerText = '$0.00';
+            }, 300);
+        }
+
+        // Live Cost Estimator in Form
+        function calculateEstimate() {
+            const guests = parseInt(document.getElementById('guestCount').value) || 0;
+            const style = document.getElementById('cateringStyle').value;
+            let estimate = 0;
+
+            if (style === 'board') {
+                if (guests <= 10) estimate = 145;
+                else if (guests <= 25) estimate = 295;
+                else estimate = 450;
+            } else if (style === 'table') {
+                estimate = Math.max(550, guests * 22);
+            } else if (style === 'cups') {
+                estimate = Math.max(168, guests * 14);
+            } else if (style === 'custom') {
+                estimate = 350;
+            }
+
+            document.getElementById('estimatedPrice').innerText = estimate > 0 ? `$${estimate}.00` : '$0.00';
+        }
+
+        // Handle Form Submit
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('cateringForm').classList.add('hidden');
+            document.getElementById('successMessage').classList.remove('hidden');
+        }
+
+        // Scroll to Section Utility
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Initialize default view on window load
+        window.onload = function() {
+            switchCategory('boards');
+        };
+    </script>
+</body>
+</html>
